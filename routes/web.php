@@ -26,7 +26,7 @@ Route::middleware(['auth', 'rolemanager:user'])->group( function () {
 });
 Route::middleware(['auth', 'rolemanager:admin'])->group( function () {
     Route::get('admin/dashboard', [DashboardController::class, 'adminDashboard'])->name('admin.dashboard');
-    // composer require yajra/laravel-datatables
+    // Install this package first:  composer require yajra/laravel-datatables
     Route::get('admin/users', [DashboardController::class, 'getUserList'])->name('user.list');
     Route::get('admin/users/data', [DashboardController::class, 'getUserData'])->name('user.data');
 });
